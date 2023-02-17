@@ -114,6 +114,14 @@ app
   .patch(updateTour)
   .delete(deleteTour);
 
+app.route("/api/v1/users").get(getAllUsers).post(createUser);
+
+app
+  .route("/api/v1/users/:id")
+  .get(getUsers)
+  .patch(updateUser)
+  .delete(deleteUser);
+
 const port = 3000;
 app.listen(port, () => {
   console.log("App running");
